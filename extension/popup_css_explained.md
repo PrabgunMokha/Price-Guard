@@ -1,0 +1,68 @@
+# popup_css_explained.md — Har Line Ka MATLAB (Hinglish Mein)
+
+Extension popup ki styling — dark theme, colors, spacing, buttons.
+
+---
+
+## RESET & BASE
+
+```css
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 280px; font-family: -apple-system, sans-serif; background: #0f0f1a; color: #fff; font-size: 13px; }
+```
+- **Kyun:** Browser reset + dark background (#0f0f1a = nearly black), system font.
+
+---
+
+## LAYOUT
+
+```css
+.popup { padding: 14px; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #222; }
+.logo { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: #7bf5a7; }
+.badge { font-size: 11px; color: #888; background: #2a2a4a; padding: 3px 8px; border-radius: 6px; }
+```
+- **Kyun:** Header row — logo left (green), badge right (pill shape, gray). Flexbox spacing.
+
+---
+
+## CARDS
+
+```css
+.card { background: #1a1a2e; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+.card-label { font-size: 10px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; color: #888; margin-bottom: 5px; }
+.price-val { font-size: 18px; font-weight: 700; }
+.price-val.bad { color: #ff6b6b; }
+.price-val.good { color: #7bf5a7; }
+```
+- **Kyun:** Info cards — dark purple-blue bg, rounded. Price colors: red (bad/inflated), green (good/normal).
+
+---
+
+## FORM & BUTTONS
+
+```css
+.input { width: 100%; padding: 8px 10px; background: #2a2a4a; border: 1px solid #333; border-radius: 8px; color: #fff; font-size: 12px; margin-bottom: 8px; outline: none; }
+.input:focus { border-color: #7bf5a7; }
+.btn-primary { width: 100%; padding: 9px; background: #7bf5a7; color: #0f0f1a; border: none; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; }
+.btn-ghost { background: transparent; border: none; color: #888; font-size: 12px; cursor: pointer; padding: 4px; }
+.btn-ghost:hover { color: #fff; }
+```
+- **Kyun:** Dark inputs (focus = green border), green primary CTA, ghost button for Sign In link.
+
+```css
+.error { color: #ff6b6b; font-size: 11px; text-align: center; padding: 6px; background: rgba(255,107,107,.1); border-radius: 6px; }
+.footer { display: flex; justify-content: flex-end; padding-top: 10px; border-top: 1px solid #222; }
+```
+- **Kyun:** Error = red text on light red bg. Footer = right-aligned content, separator line.
+
+---
+
+## DESIGN SYSTEM
+
+- **Primary Green:** `#7bf5a7` — brand, success, good prices
+- **Alert Red:** `#ff6b6b` — errors, inflated prices
+- **Background Dark:** `#0f0f1a` — main bg
+- **Surface Dark:** `#1a1a2e` — cards, inputs
+- **Muted:** `#2a2a4a` — buttons, borders
+- **Text Gray:** `#888` — secondary text

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" fill="none" stroke="#7bf5a7" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>PriceScope</span>
+      </div>
+      <span id="auth-badge" class="badge">—</span>
+    </header>
+
+    <div id="main">
+      <div class="card" style="margin-bottom: 8px;">
+        <div class="card-label">Product</div>
+        <div id="product-name" class="price-val" style="font-size: 12px; color: #ccc;">—</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Your Price</div>
+        <div id="your-price" class="price-val bad">Scanning...</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Fresh Price</div>
+        <div id="fresh-price" class="price-val good">—</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Inflation</div>
+        <div id="inflation" class="price-val">—</div>
+      </div>
+    </div>
+
+    <div id="auth-form" class="auth-form" style="display:none">
+      <input id="email" type="email" placeholder="Email" class="input">
+      <input id="password" type="password" placeholder="Password" class="input">
+      <button id="submit-auth" class="btn-primary">Continue</button>
+      <div id="auth-error" class="error" style="display:none"></div>
+    </div>
+
+    <footer class="footer">
+      <button id="signin-btn" class="btn-ghost">Sign In</button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

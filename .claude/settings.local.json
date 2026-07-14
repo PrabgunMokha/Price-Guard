@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l backend/*.py extension/*.js extension/*.css extension/*.html extension/*.json)",
+      "Bash(grep \"^ *[0-9]*  $\")",
+      "Bash(pip install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(uvicorn main:app --reload --port 8000)",
+      "Bash(python3 -c \"from playwright_engine import get_fresh_price; print\\('import ok'\\)\")",
+      "Bash(python -c \"from playwright_engine import get_fresh_price; print\\('import ok'\\)\")"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Premium Coffee Beans">
+    <title>Premium Coffee Beans | Shop</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; }
+        .product-card { border: 1px solid #ccc; padding: 20px; max-width: 400px; }
+        .price { font-size: 24px; color: #e44d26; font-weight: bold; }
+        .size-selector { margin: 20px 0; }
+        .size-btn { padding: 8px 16px; border: 1px solid #333; cursor: pointer; background: #fff; }
+        .size-btn.active { background: #333; color: #fff; }
+        button#add-to-cart-button { background: #fb923c; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="product-card" itemtype="http://schema.org/Product">
+        <h1 itemprop="name">Premium Coffee Beans</h1>
+        <p>A smooth and rich coffee experience.</p>
+        <div class="price">₹499.00</div>
+        
+        <div class="size-selector">
+            <button class="size-btn" onclick="selectSize(this, '250g')">250g</button>
+            <button class="size-btn active" onclick="selectSize(this, '500g')">500g</button>
+            <button class="size-btn" onclick="selectSize(this, '1kg')">1kg</button>
+        </div>
+
+        <button id="add-to-cart-button">Add to Cart</button>
+    </div>
+
+    <script>
+        function selectSize(el, size) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            console.log('Selected size:', size);
+            // Simulate price change
+            const prices = { '250g': '₹299.00', '500g': '₹499.00', '1kg': '₹899.00' };
+            document.querySelector('.price').textContent = prices[size];
+        }
+    </script>
+</body>
+</html>
